@@ -31,7 +31,8 @@ body {
  align-items: center;
  flex-direction: column;
  width: 100%;
- padding: 0 2em;
+ padding: 0;
+ margin: 0;
  font-weight: 400;
  height: 100vh;
 
@@ -41,17 +42,19 @@ body {
 }
 
 .blog {
- background-color: $blog-bg;
- max-width: 1350px;
- display: grid;
- height: 90vh;
- max-height: 800px;
- overflow: hidden;
- grid-template-columns: 15% 20% 35% 30%;
- grid-template-rows: 100%;
- width: 100%;
- padding: 40px 4px;
- position: relative;
+    background-color: $blog-bg;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 15% 20% 65%;
+    grid-template-rows: 100%;
+    position: relative;
+    width: 100vw; /* Full width */
+    height: 100vh; /* Full height */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds viewport height */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    margin: 0; /* Remove default margin */
+    padding: 20px; /* Remove default padding */
 
  @media screen and (max-width: 1030px) {
   grid-template-columns: 20% 50% 30%;
@@ -274,14 +277,10 @@ body {
  overflow-y: auto;
  overflow-x: hidden;
  height: 100%;
+ width: 100%;
  display: flex;
  flex-direction: column;
  scroll-snap-type: y mandatory;
- border-right: 1px solid $border-color;
-
- @media screen and (max-width: 768px) {
-  border-right: 0;
- }
 
  & > * {
   flex-shrink: 0;
@@ -293,29 +292,6 @@ body {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
- }
-}
-
-marquee {
- font-size: 20px;
- background-color: $body-bg;
- color: $blog-bg;
- padding: 6px 0;
- width: calc(100% + 44px);
- margin-left: -20px;
- flex-shrink: 0;
-
- span:before {
-  display: inline-block;
-  content: "";
-  border-radius: 50%;
-  width: 10px;
-  height: 10px;
-  position: relative;
-  top: -1px;
-  vertical-align: baseline;
-  background-color: $blog-bg;
-  margin: 0 16px;
  }
 }
 
@@ -395,21 +371,6 @@ marquee {
  margin-top: 40px;
 }
 
-.right-blog {
- display: flex;
- flex-direction: column;
-
- @media screen and (max-width: 768px) {
-  display: none;
- }
-
- .blog-menu {
-  @media screen and (max-width: 1030px) {
-   display: none;
-  }
- }
-}
-
 ::-webkit-scrollbar {
  display: none;
 }
@@ -457,3 +418,4 @@ marquee {
   display: none;
  }
 }
+
