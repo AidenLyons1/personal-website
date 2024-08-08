@@ -9,6 +9,7 @@ html {
  box-sizing: border-box;
  -webkit-font-smoothing: antialiased;
  height: 100%;
+ scroll-behavior: smooth;
 }
 
 img {
@@ -25,7 +26,7 @@ $subtitle-color: #161419;
 $border-color: #94918f;
 
 body {
- background-color: $body-bg;
+ background-color: $blog-bg;
  display: flex;
  font-family: $subtitle-font;
  justify-content: center;
@@ -41,6 +42,24 @@ body {
  height: 100%;
 }
 
+.title-container {
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+.title-card {
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    background-color: $body-bg; /* Background color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start; /* Snap point */
+
+  }
+
 .blog {
     background-color: $blog-bg;
     display: grid;
@@ -55,6 +74,8 @@ body {
     box-sizing: border-box; /* Include padding and border in the element's total width and height */
     margin: 0; /* Remove default margin */
     padding: 20px; /* Remove default padding */
+    scroll-snap-align: start; /* Snap point */
+
 
  @media screen and (max-width: 1030px) {
   grid-template-columns: 20% 80%;
@@ -100,13 +121,17 @@ body {
    margin-top: 24px;
   }
 
+  &-nav {
+    font-weight: 450;
+  }
+
   &.mention {
    margin-top: auto;
    font-size: 19px;
 //    justify-content: flex-end;
 
    @media screen and (max-width: 1260px) {
-    font-size: 1.4vw;
+    font-size: 1.7vw;
    }
   }
 
@@ -212,7 +237,7 @@ body {
 .small-title {
  border-bottom: 1px solid $border-color;
  margin-bottom: 20px;
- padding-bottom: 20px;
+ padding-bottom: 10px;
  padding-left: 3px;
 
  @media screen and (max-width: 560px) {
@@ -303,3 +328,30 @@ body {
  }
 }
 }
+
+@media screen and (max-width: 480px) {
+    .blog {
+      grid-template-columns: 0% 100%;
+    }
+
+    .context {
+        padding-left: 74px;
+    }
+  
+    .page-number {
+      display: none;
+    }
+  
+    .blog-article {
+      padding: 0;
+      width: 100%;
+    }
+
+    .blog-menu-nav {
+        display: none;
+    }
+
+    .blog .page-number {
+        border-right: none;
+    }
+  }
