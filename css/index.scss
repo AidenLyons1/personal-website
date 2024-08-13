@@ -348,9 +348,13 @@ body {
       display: none;
     }
   
+    .blog-article:not(.header-article) {
+      padding-bottom: 80px;
+    }
+
     .blog-article {
       padding: 0;
-      padding-bottom: 80px;
+      // padding-bottom: 80px;
       width: 100%;
     }
 
