@@ -33,7 +33,7 @@ body {
 }
 
 .title-container {
-  height: 100%;
+  height: 100vh;
   width: 100%;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
@@ -53,6 +53,7 @@ body {
   background-color: #e9e6e4;
   display: grid;
   overflow: hidden;
+  min-height: calc(100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom));
   grid-template-columns: 20% 80%;
   grid-template-rows: 100%;
   position: relative;
@@ -63,6 +64,7 @@ body {
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   margin: 0; /* Remove default margin */
   padding: 20px; /* Remove default padding */
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
   scroll-snap-align: start; /* Snap point */
 }
 @media screen and (max-width: 1030px) {
@@ -100,6 +102,11 @@ body {
 @media screen and (max-width: 1260px) {
   .blog-menu {
     font-size: 1.8vw;
+  }
+}
+@media screen and (max-width: 560px) {
+  .blog-menu {
+    font-size: 2.4vw;
   }
 }
 .blog-menu svg {
@@ -188,6 +195,7 @@ body {
 }
 .blog-article {
   padding: 0 20px;
+  padding-bottom: calc(20px + env(safe-area-inset-bottom));
 }
 .blog-article img {
   height: 260px;
@@ -300,6 +308,7 @@ body {
   }
   .blog-article {
     padding: 0;
+    padding-bottom: 80px;
     width: 100%;
   }
   .blog-menu-nav {
