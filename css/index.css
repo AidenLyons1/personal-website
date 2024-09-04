@@ -42,7 +42,7 @@ body {
 .title-card {
   height: 100vh; /* Full viewport height */
   width: 100%;
-  background-color: #121418; /* Background color */
+  background-color: #e9e6e4; /* Background color */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -215,7 +215,6 @@ body {
   font-family: "Inter", sans-serif;
   border-right: 1px solid #94918f;
   white-space: nowrap;
-  padding-top: 20px;
 }
 @media screen and (max-width: 1260px) {
   .blog .page-number {
@@ -227,6 +226,7 @@ body {
   margin-bottom: 20px;
   padding-bottom: 10px;
   padding-left: 3px;
+  padding-top: 5px;
 }
 @media screen and (max-width: 560px) {
   .blog .small-title {
@@ -268,7 +268,7 @@ body {
 .blog .blog-detail {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: 14px;
 }
 .blog .blog-detail span {

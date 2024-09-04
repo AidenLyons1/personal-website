@@ -52,7 +52,7 @@ body {
 .title-card {
     height: 100vh; /* Full viewport height */
     width: 100%;
-    background-color: $body-bg; /* Background color */
+    background-color: $blog-bg; /* Background color */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +233,6 @@ body {
  font-family: $subtitle-font;
  border-right: 1px solid $border-color;
  white-space: nowrap;
- padding-top: 20px;
 
  @media screen and (max-width: 1260px) {
   font-size: 5vw;
@@ -245,6 +244,7 @@ body {
  margin-bottom: 20px;
  padding-bottom: 10px;
  padding-left: 3px;
+ padding-top: 5px;
 
  @media screen and (max-width: 560px) {
   display: none;
@@ -294,7 +294,7 @@ body {
 .blog-detail {
  display: flex;
  align-items: center;
- justify-content: space-between;
+ justify-content: flex-start;
  font-size: 14px;
 
  span {
