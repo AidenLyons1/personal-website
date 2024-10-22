@@ -1,0 +1,372 @@
+/* CSS Variables */
+:root {
+    --primary-color: #265BC2;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --light-text-color: #777;
+    --white-color: #fff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+
+    --font-main: 'Open Sans', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-size-large: 36px;
+    --font-size-medium: 18px;
+    --font-size-small: 14px;
+    --font-size-xsmall: 12px;
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Container */
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--white-color);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+    border-bottom: 1px solid #eaeaea;
+}
+
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.thistle-icon {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.join-button {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 5px 30px;
+    border-radius: 5px;
+}
+
+.join-button:hover {
+    background-color: var(--primary-color);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    background: linear-gradient(135deg, hsla(220, 67%, 45%, 1) 9%, hsla(112, 32%, 56%, 1) 100%);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.hero-content {
+    z-index: 1;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    margin: 0;
+}
+
+.hero-content h1 span {
+    opacity: 0;
+    display: inline-block;
+    animation: fadeInWord 0.7s ease forwards;
+    animation-delay: calc(var(--i) * 0.3s);
+}
+
+@keyframes fadeInWord {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Committee Section */
+.committee {
+    padding: 80px 0;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.committee h2 {
+    font-size: var(--font-size-large);
+    margin-bottom: 50px;
+    font-family: var(--font-heading);
+}
+
+/* Grid Wrapper for Profile Cards */
+.profile-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Profile Card Styling */
+.profile-card {
+    background-color: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.profile-card h3 {
+    font-size: var(--font-size-medium);
+    margin: 10px 0 5px;
+    font-family: var(--font-heading);
+}
+
+.profile-card p {
+    font-size: var(--font-size-small);
+    color: var(--light-text-color);
+}
+
+/* Responsive: Show 2 cards per row on smaller screens */
+@media (max-width: 768px) {
+    .profile-grid {
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: 10px;
+    }
+}
+
+/* Events Section */
+.events {
+    padding: 80px 0;
+}
+
+.events h2 {
+    text-align: center;
+    font-size: var(--font-size-large);
+    font-family: var(--font-heading);
+    margin-bottom: 50px;
+}
+
+.event-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.event-item {
+    background-color: var(--white-color);
+    width: 300px;
+    margin: 15px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.event-item h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+}
+
+.event-item p {
+    margin-bottom: 10px;
+}
+
+.event-item .btn {
+    margin-top: 10px;
+}
+
+/* Contact Section */
+footer {
+    background-color: var(--text-color);
+    color: var(--white-color);
+    padding: 80px 0;
+    height: 100vh;
+}
+
+footer h2 {
+    text-align: center;
+    font-size: var(--font-size-large);
+    font-family: var(--font-heading);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 25px;
+    color: var(--white-color);
+    font-size: var(--font-size-medium);
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: var(--primary-color);
+}
+
+.social-media {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.social-media a {
+    margin: 0 10px;
+    display: inline-block;
+}
+
+.social-media img {
+    width: 30px;
+    height: 30px;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    header .container {
+        padding: 10px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    nav ul li {
+        margin-left: 20px;
+    }
+
+    nav ul li a {
+        font-size: var(--font-size-small);
+    }
+
+    .thistle-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    nav .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-card,
+    .event-item {
+        width: 90%;
+    }
+
+    nav ul {
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        margin-left: 15px;
+    }
+
+    .thistle-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    nav ul li a {
+        font-size: var(--font-size-xsmall);
+    }
+}
