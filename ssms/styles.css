@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 /* CSS Variables */
 :root {
     --primary-color: #265BC2;
@@ -7,8 +9,8 @@
     --white-color: #fff;
     --shadow-color: rgba(0, 0, 0, 0.1);
 
-    --font-main: 'Open Sans', sans-serif;
-    --font-heading: 'Montserrat', sans-serif;
+    --font-main: 'Poppins', sans-serif;
+    --font-heading: 'League Spartan', sans-serif;
     --font-size-large: 36px;
     --font-size-medium: 18px;
     --font-size-small: 14px;
@@ -85,7 +87,7 @@ nav ul li a {
 
 .join-button:hover {
     background-color: var(--primary-color);
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 /* Hero Section */
@@ -116,7 +118,7 @@ nav ul li a {
 }
 
 .hero-content h1 {
-    font-size: 5rem;
+    font-size: 6.5rem;
     font-family: var(--font-heading);
     line-height: 1.2;
     margin: 0;
@@ -150,7 +152,7 @@ nav ul li a {
 .committee h2 {
     font-size: var(--font-size-large);
     margin-bottom: 50px;
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
 }
 
 /* Grid Wrapper for Profile Cards */
@@ -187,7 +189,7 @@ nav ul li a {
 .profile-card h3 {
     font-size: var(--font-size-medium);
     margin: 10px 0 5px;
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
 }
 
 .profile-card p {
@@ -212,7 +214,7 @@ nav ul li a {
 .events h2 {
     text-align: center;
     font-size: var(--font-size-large);
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
     margin-bottom: 50px;
 }
 
@@ -233,7 +235,7 @@ nav ul li a {
 }
 
 .event-item h3 {
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
     margin-bottom: 10px;
 }
 
@@ -256,7 +258,7 @@ footer {
 footer h2 {
     text-align: center;
     font-size: var(--font-size-large);
-    font-family: var(--font-heading);
+    font-family: var(--font-main);
     margin-bottom: 50px;
     margin-top: 10px;
 }
